@@ -11,11 +11,25 @@ struct ContentView: View {
     var body: some View {
         
         NavigationStack {
+            VStack {
+            
+                NavigationLink(destination: Text("Welcome to Content View")) {
+                    Text("Content View")
+                } // navigation link end
+
             Text("This is the root view 🌳")
             
-            NavigationLink(destination: Text("You've arrived to the Ssecond View🎊")) { // destitional shows what will be on the new view
-                Text("Click me!") // the label shows the user the link
-            }
+                NavigationLink(destination: SecondView()) { // destitional shows what will be on the new view
+                    Text("Click me!") // the label shows the user the link
+                
+                } // navigation link end
+                
+            } // vstack end
+                
+                // custumize back button
+            .navigationTitle("Home")
+            .navigationBarTitleDisplayMode(.inline)
+            .navigationBarHidden(true) // hides Home title from user in root view
         } // navigation stack end
         
     
